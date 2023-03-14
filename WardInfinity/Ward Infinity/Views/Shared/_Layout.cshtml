@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        body {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+
+        .card-footer .btn:hover {
+            background-color: #555; /* Change the background color to #555 when the button is hovered over */
+            color: #fff; /* Change the text color to white when the button is hovered over */
+        }
+
+        .btn-bordered {
+            border: 1px solid #FFCD00;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .container-fluid {
+            max-width: 1920px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: transparent;
+        }
+
+        .card-footer .btn {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        body {
+            background: url(https://media2.giphy.com/media/RlwF2vFb4y7bDnWvcO/giphy.gif?cid=ecf05e470ddufw2zt65m34eb1nqp0sugcvga69u7p8aef1s5&rid=giphy.gif&ct=g) no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm fixed-top" style="background-color: #1b1e1f;">
+        <div class="container" style="border-bottom: groove; border-color: #FFCD00;">
+            <a href="@Url.Action("Index", "WardInfinity")">
+                <img src="~/Content/WardInfinity.png" alt="Navbar Image" height="75px" width="75px" class="align-items-start" />
+            </a>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Game", "Game", "WardInfinity", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                    <li>@Html.ActionLink("News", "News", "WardInfinity", new { area = "" }, new { @class = "nav-link text-white" })</li>
+                    <!--<li>@Html.ActionLink("Support", "Support", "WardInfinity", new { area = "" }, new { @class = "nav-link text-white" })</li>-->
+                </ul>
+            </div>
+            @Html.ActionLink("PLAY NOW", "PlayNow", "WardInfinity", new { area = "" }, new { @class = "btn btn-dark btn-bordered" })
+            &nbsp;
+            @Html.ActionLink("BUY PACK", "BuyPack", "WardInfinity", new { area = "" }, new { @class = "btn btn-dark btn-bordered" })
+        </div>
+    </nav>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <div>
+            <footer class="text-center text-white fixed-bottom" style="background-color: #1b1e1f;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Found Ark</h3>
+                            <dl>
+                                <dt>@Html.ActionLink("Game", "Game", "WardInfinity", new { area = "" }, new { @class = "nav-link" })</dt>
+                                <dt>@Html.ActionLink("News", "News", "WardInfinity", new { area = "" }, new { @class = "nav-link" })</dt>
+                            </dl>
+                        </div>
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Technical Issues</h3>
+                            <dl>
+                                <dt>@Html.ActionLink("Support", "Support", "WardInfinity", new { area = "" }, new { @class = "nav-link" })</dt>
+                            </dl>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <p></p>
+                            <p>&copy;@DateTime.Now.Year - Ward Infinity</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+
