@@ -47,13 +47,13 @@
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm fixed-top" style="background-color: #1b1e1f;">
         <div class="container" style="border-bottom: groove; border-color: #FFCD00;">
             <a href="@Url.Action("Index", "WardInfinity")">
-                <img src="~/Content/WardInfinity.png" alt="Navbar Image" height="75px" width="75px" class="align-items-start" />
+                <img src="~/Content/WardInfinity.jpg" alt="Navbar Image" height="75px" width="75px" class="align-items-start" />
             </a>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Game", "Game", "WardInfinity", new { area = "" }, new { @class = "nav-link text-white" })</li>
                     <li>@Html.ActionLink("News", "News", "WardInfinity", new { area = "" }, new { @class = "nav-link text-white" })</li>
-                    <!--<li>@Html.ActionLink("Support", "Support", "WardInfinity", new { area = "" }, new { @class = "nav-link text-white" })</li>-->
+                    <li>@Html.ActionLink("Support", "Support", "WardInfinity", new { area = "" }, new { @class = "nav-link text-white" })</li>
                 </ul>
             </div>
             @Html.ActionLink("PLAY NOW", "PlayNow", "WardInfinity", new { area = "" }, new { @class = "btn btn-dark btn-bordered" })
